@@ -19,12 +19,13 @@ function Table(props) {
       return (
         <tr key={index}>
           <td>{index + 1}</td>
-          <td>
+          <td style={{textAlign: 'left'}}>
             <img
               src={camper.img}
               width={40}
               height={40}
               alt="avatar-thumbnail"
+              style={{marginRight: '10px'}}
             />
             {camper.username}
           </td>
@@ -38,6 +39,14 @@ function Table(props) {
 
     return (
       <table>
+        <thead>
+          <tr>
+            <th style={{width: 50}}>#</th>
+            <th>Camper</th>
+            <th style={{width: 100}}>Recent</th>
+            <th style={{width: 100}}>All Time</th>
+        </tr>
+        </thead>
         <tbody>
           {rowArray.length > 0 ? rowArray : ''}
         </tbody>

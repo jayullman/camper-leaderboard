@@ -12,10 +12,13 @@
 }
 
 .App-header {
+  margin: 0 auto;
   background-color: #444;
-  height: 80px;
-  padding: 20px;
+  height: 150px;
+  padding: 10px;
   color: white;
+  min-width: 300px;
+  max-width: 700px;
 }
 
 .App-header h1 {
@@ -23,6 +26,16 @@
   margin-bottom: 2px;
   font-family: Courier, monospace;
   word-spacing: -.5em;
+}
+
+.fcc-title {
+  font-size: .8em;
+  font-weight: 100;
+}
+
+.project-title {
+  font-size: 1.2em;
+  font-weight: 100;
 }
 
 .subtitle {
@@ -35,6 +48,19 @@
   font-weight: 100;
 }
 
+@media (max-width: 400px) {
+  .github {
+    text-align: center;
+  }
+
+
+}
+
+/* Table Styles */
+table {
+  margin: 0 auto;
+
+}
 
 td {
   border: 1px solid black;
