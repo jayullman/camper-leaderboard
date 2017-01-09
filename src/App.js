@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import requestJSON from './requestJSON';
+import Button from './UpdateButton';
+import Table from './Table';
+
 
 import logo from './logo.svg';
 import './styles/App.css';
@@ -21,12 +24,12 @@ class App extends Component {
     requestJSON.call(this);
 
   }
-
-
+  // this method will make another AJAX request and update
+  updateData = () => {
+    requestJSON.call(this);
+}
 
   render() {
-
-
 
     return (
       <div className="App">
@@ -36,8 +39,21 @@ class App extends Component {
         </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-          {this.state.scores_30days}
+          <Button onClick={this.updateData} />
+          <br/>
+          <br/>
+          <br/>
+          30 Days <br/><br/>
+
+
+          <br/>
+          <br/>
+          allTime <br/><br/>
+      
         </p>
+
+        <Table scores={this.state.scores_30days} />
+
       </div>
     );
   }

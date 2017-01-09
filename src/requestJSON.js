@@ -11,12 +11,11 @@ export default function() {
     xhr_recentScores.open('Get', 'https://fcctop100.herokuapp.com/api/fccusers/top/recent');
 
 
-
   xhr_allTimeScores.onreadystatechange = () => {
     if (xhr_allTimeScores.readyState === 4) {
       if (xhr_allTimeScores.status === 200) {
 
-      this.setState({scores_allTime: xhr_allTimeScores.responseText});
+      this.setState({scores_allTime: JSON.parse(xhr_allTimeScores.responseText)});
         console.log('success');
       } else {
         console.log('Error: ' + xhr_allTimeScores.status);
@@ -28,8 +27,8 @@ export default function() {
     if (xhr_recentScores.readyState === 4) {
       if (xhr_recentScores.status === 200) {
         console.log('success');
-        console.log(xhr_allTimeScores.responseText);
-      this.setState({scores_30days: xhr_allTimeScores.responseText});
+        console.log(JSON.parse(xhr_allTimeScores.responseText));
+      this.setState({scores_30days: JSON.parse(xhr_recentScores.responseText)});
       } else {
         console.log('Error: ' + xhr_recentScores.status);
       }
