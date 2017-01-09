@@ -1,10 +1,15 @@
+/* Notes and TODOs
+
+TODO: add font awesome to project
+*/
+
+
 import React, { Component } from 'react';
 import requestJSON from './requestJSON';
+import Header from './Header';
 import Button from './UpdateButton';
 import Table from './Table';
 
-
-import logo from './logo.svg';
 import './styles/App.css';
 
 class App extends Component {
@@ -33,10 +38,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
+        <Header />
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
           <Button onClick={this.updateData} />
@@ -49,7 +51,7 @@ class App extends Component {
           <br/>
           <br/>
           allTime <br/><br/>
-      
+
         </p>
 
         <Table scores={this.state.scores_30days} />
