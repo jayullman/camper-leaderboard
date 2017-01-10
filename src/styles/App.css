@@ -56,8 +56,8 @@
 }
 
 .App-intro {
-  margin: 0 auto;
-  max-width: 700px;
+  margin: 10px auto;
+  max-width: 500px;
   min-width: 300px;
   margin-bottom: 10px;
 }

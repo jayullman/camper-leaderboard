@@ -50,9 +50,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <p className="App-intro">
-          Click the Recent or All Time column headers to
-          see the a list of 100 campers organized by Recent (Past 30 Days), or
-          All Time.
+          Click the 'Recent' or 'All Time' column headers to
+          see a list of the 100 campers with the most Brownie Points.
           <br/><br/>
           <Button onClick={this.updateData} />
 
