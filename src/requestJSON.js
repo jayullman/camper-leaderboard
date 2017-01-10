@@ -16,7 +16,6 @@ export default function() {
       if (xhr_allTimeScores.status === 200) {
 
       this.setState({scores_allTime: JSON.parse(xhr_allTimeScores.responseText)});
-        console.log('success');
       } else {
         console.log('Error: ' + xhr_allTimeScores.status);
       }
@@ -26,7 +25,6 @@ export default function() {
   xhr_recentScores.onreadystatechange = () => {
     if (xhr_recentScores.readyState === 4) {
       if (xhr_recentScores.status === 200) {
-        console.log('success');
       /*console.log(JSON.parse(xhr_allTimeScores.responseText));*/
       this.setState({scores_recent: JSON.parse(xhr_recentScores.responseText)});
       } else {

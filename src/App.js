@@ -1,12 +1,7 @@
-/* Notes and TODOs
-
-TODO: add font awesome to project
-*/
-
-
 import React, { Component } from 'react';
 import requestJSON from './requestJSON';
 import Header from './Header';
+import Footer from './Footer';
 import Button from './UpdateButton';
 import Table from './Table';
 
@@ -37,8 +32,7 @@ class App extends Component {
 
 
   handleColumnClick = (e) => {
-    console.log('clickity clack!!');
-    console.log(e.target);
+    e.preventDefault();
 
     if (e.target.id === 'recent') {
       this.setState({currentView: 'recent'});
@@ -71,7 +65,7 @@ class App extends Component {
           handleClick={this.handleColumnClick}
           currentView={this.state.currentView}
          />
-      
+        <Footer />
       </div>
     );
   }

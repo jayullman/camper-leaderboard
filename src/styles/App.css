@@ -6,6 +6,12 @@
 .App-header a:hover, .App-header a:active {
 	color: rgb(190, 246, 250);
 }
+
+.App-footer a:link, .App-footer a:visited,
+.App-footer a:hover, .App-footer a:active {
+	color: rgb(190, 246, 250);;
+}
+
  a:link, a:visited,
  a:hover, a:active {
 	text-decoration: none;
@@ -27,6 +33,16 @@
   margin-bottom: 2px;
   font-family: Courier, monospace;
   word-spacing: -.5em;
+}
+
+.App-footer {
+  margin: 10px auto;
+  background-color: #444;
+  height: 40px;
+  padding: 10px;
+  color: white;
+  min-width: 300px;
+  max-width: 700px;
 }
 
 .fcc-title {
@@ -80,13 +96,28 @@ button:active {
 }
 
 /* Table Styles */
-table {
-  margin: 10px auto 0 auto;
 
+.table-container {
+  min-width: 300px;
+  max-width: 700px;
+  margin: 20px auto 0 auto;
+}
+table {
+  width: 100%;
+}
+
+img {
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 td {
   border: 1px solid black;
+  vertical-align: middle;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(200, 200, 200);
 }
 
 .currentView  {
