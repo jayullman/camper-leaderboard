@@ -43,8 +43,30 @@ function Table(props) {
           <tr>
             <th style={{width: 50}}>#</th>
             <th>Camper</th>
-            <th style={{width: 100}}>Recent</th>
-            <th style={{width: 100}}>All Time</th>
+            <th style={{width: 100}}>
+              <a
+                className={props.currentView === 'recent' ? 'currentView' : ''}
+                href="#"
+                onClick={props.handleClick}
+                id="recent">
+                Recent{" "}
+                {props.currentView === 'recent' ?
+                  <i className="fa fa-free-code-camp" aria-hidden="true"></i> : ''
+                }
+              </a>
+            </th>
+            <th style={{width: 100}}>
+              <a
+                className={props.currentView === 'allTime' ? 'currentView' : ''}
+                href="#"
+                onClick={props.handleClick}
+                id="allTime">
+                All Time{" "}
+                {props.currentView === 'allTime' ?
+                  <i className="fa fa-free-code-camp" aria-hidden="true"></i> : ''
+                }
+              </a>
+            </th>
         </tr>
         </thead>
         <tbody>

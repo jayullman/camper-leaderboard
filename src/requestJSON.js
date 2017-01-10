@@ -27,8 +27,8 @@ export default function() {
     if (xhr_recentScores.readyState === 4) {
       if (xhr_recentScores.status === 200) {
         console.log('success');
-        console.log(JSON.parse(xhr_allTimeScores.responseText));
-      this.setState({scores_30days: JSON.parse(xhr_recentScores.responseText)});
+      /*console.log(JSON.parse(xhr_allTimeScores.responseText));*/
+      this.setState({scores_recent: JSON.parse(xhr_recentScores.responseText)});
       } else {
         console.log('Error: ' + xhr_recentScores.status);
       }

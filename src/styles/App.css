@@ -8,7 +8,8 @@
 }
  a:link, a:visited,
  a:hover, a:active {
-	color: #000;
+	text-decoration: none;
+  color: #000;
 }
 
 .App-header {
@@ -38,6 +39,13 @@
   font-weight: 100;
 }
 
+.App-intro {
+  margin: 0 auto;
+  max-width: 700px;
+  min-width: 300px;
+  margin-bottom: 10px;
+}
+
 .subtitle {
   margin-top: 2px;
   font: 1em Courier, monospace;
@@ -56,14 +64,33 @@
 
 }
 
+button {
+  outline: 0;
+  border: 3px solid teal;
+  background-color: teal;
+  color: #fff;
+  padding: .3em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #fff;
+  color: #000;
+}
+
 /* Table Styles */
 table {
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
 
 }
 
 td {
   border: 1px solid black;
+}
+
+.currentView  {
+  color: rgb(36, 146, 166) !important;
 }
 
 /* default styles

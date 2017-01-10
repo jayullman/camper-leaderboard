@@ -17,10 +17,11 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    /* currentView can be either recent or allTime */
     this.state = {
       scores_allTime: [],
-      scores_30days: []
-
+      scores_recent: [],
+      currentView: 'recent'
     };
 
     // makes ajax call to FCC's server and sets the state
@@ -30,9 +31,24 @@ class App extends Component {
 
   }
   // this method will make another AJAX request and update
-  updateData = () => {
+    updateData = () => {
     requestJSON.call(this);
-}
+  }
+
+
+  handleColumnClick = (e) => {
+    console.log('clickity clack!!');
+    console.log(e.target);
+
+    if (e.target.id === 'recent') {
+      this.setState({currentView: 'recent'});
+    } else {
+      this.setState({currentView: 'allTime'});
+    }
+
+
+
+  }
 
   render() {
 
@@ -40,22 +56,22 @@ class App extends Component {
       <div className="App">
         <Header />
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Click the Recent or All Time column headers to
+          see the a list of 100 campers organized by Recent (Past 30 Days), or
+          All Time.
+          <br/><br/>
           <Button onClick={this.updateData} />
-          <br/>
-          <br/>
-          <br/>
-          30 Days <br/><br/>
-
-
-          <br/>
-          <br/>
-          allTime <br/><br/>
 
         </p>
 
-        <Table scores={this.state.scores_30days} />
-
+        <Table
+          scores={this.state.currentView === 'recent' ?
+            this.state.scores_recent :
+            this.state.scores_allTime}
+          handleClick={this.handleColumnClick}
+          currentView={this.state.currentView}
+         />
+      
       </div>
     );
   }
